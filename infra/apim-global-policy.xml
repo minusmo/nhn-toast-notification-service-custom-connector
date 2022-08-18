@@ -43,7 +43,7 @@
         <return-response>
           <set-status code="301" reason="Moved Permanently" />
           <set-header name="Location" exists-action="override">
-            <value>https://github.com/devrel-kr/nhn-toast-notification-service-custom-connector</value>
+            <value>https://github.com/minusmo/nhn-toast-notification-service-custom-connector</value>
           </set-header>
         </return-response>
       </when>

@@ -129,7 +129,7 @@ var deploymentScript = {
     containerGroupName: format(metadata.longName, 'contgrp')
     functionAppSuffixes: functionAppSuffixes
     azureCliVersion: azureCliVersion
-    scriptUri: 'https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/setup-apim.sh'
+    scriptUri: 'https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/setup-apim.sh'
 }
 
 resource ds 'Microsoft.Resources/deploymentScripts@2020-10-01' = {

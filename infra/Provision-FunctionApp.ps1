@@ -261,7 +261,7 @@ if ($WhatIf -eq $true) {
         -p $stringified `
         -w
 
-        # -u https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/provision-functionApp.json `
+        # -u https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/provision-functionApp.json `
 } else {
     Write-Output "[$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")] Provisioning resources ..."
     $provisioned = az deployment group create -n $DeploymentName -g $ResourceGroupName `
@@ -269,7 +269,7 @@ if ($WhatIf -eq $true) {
         -p $stringified `
         --verbose
 
-        # -u https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/provision-functionApp.json `
+        # -u https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/provision-functionApp.json `
 
     if ($ProvisionedResults -eq $true) {
         Write-Output $provisioned

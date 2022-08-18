@@ -24,7 +24,7 @@ module apim './provision-apiManagement.bicep' = {
         apiMgmtPublisherEmail: apiMgmtPublisherEmail
         apiMgmtPublisherName: apiMgmtPublisherName
         apiMgmtPolicyFormat: 'xml-link'
-        apiMgmtPolicyValue: 'https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml'
+        apiMgmtPolicyValue: 'https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml'
     }
 }
 

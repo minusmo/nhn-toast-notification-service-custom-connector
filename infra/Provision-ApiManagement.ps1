@@ -121,7 +121,7 @@ Param(
 
     [string]
     [Parameter(Mandatory=$false)]
-    $ApiManagementPolicyValue = "https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml",
+    $ApiManagementPolicyValue = "https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml",
     ### API Management ###
 
     [switch]
@@ -209,7 +209,7 @@ function Show-Usage {
         -ApiManagementPolicyFormat        API Management API format.
                                           Default is 'rawxml-link'.
         -ApiManagementPolicyValue         API Management API value.
-                                          Default is 'https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml'.
+                                          Default is 'https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml'.
 
         -ProvisionedResults               Show provisioned results.
         -WhatIf:                          Show what would happen without
@@ -271,7 +271,7 @@ if ($WhatIf -eq $true) {
         -p $stringified `
         -w
 
-        # -u https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagement.json `
+        # -u https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagement.json `
 } else {
     Write-Output "[$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")] Provisioning resources ..."
     $provisioned = az deployment group create -n $DeploymentName -g $ResourceGroupName `
@@ -279,7 +279,7 @@ if ($WhatIf -eq $true) {
         -p $stringified `
         --verbose
 
-        # -u https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagement.json `
+        # -u https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagement.json `
 
     if ($ProvisionedResults -eq $true) {
         Write-Output $provisioned

@@ -14,14 +14,14 @@ done
 suffix_index=`expr $suffix_index - 2`
 
 urls=$(curl -H "Accept: application/vnd.github.v3+json" \
-    https://api.github.com/repos/devrel-kr/nhn-toast-notification-service-custom-connector/releases/latest | \
+    https://api.github.com/repos/minusmo/nhn-toast-notification-service-custom-connector/releases/latest | \
     jq '[.assets[] | .browser_download_url]')
 
 subscription_id=$(az account show --query id -o tsv)
 resource_group="rg-$AZ_RESOURCE_NAME-$AZ_ENVIRONMENT_CODE-$AZ_LOCATION_CODE"
 st_name="st$AZ_RESOURCE_NAME$AZ_ENVIRONMENT_CODE$AZ_LOCATION_CODE"
 apim_name="apim-$AZ_RESOURCE_NAME-$AZ_ENVIRONMENT_CODE-$AZ_LOCATION_CODE"
-bicep_url="https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagementApi.json"
+bicep_url="https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/provision-apiManagementApi.json"
 
 for value in `eval echo {0..$suffix_index}`
 do
@@ -36,7 +36,7 @@ do
     api_upper_suffix=$(echo ${fncapp_suffixes[$value]} | tr '[a-z]' '[A-Z]' | tr '-' '_')
     api_nv_name="X_FUNCTIONS_KEY_$api_upper_suffix"
     api_nv_value=$(az functionapp keys list -g $resource_group -n $fncapp_name --query "functionKeys.default" -o tsv)
-    api_policy_url="https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/apim-api-policy-${fncapp_suffixes[$value]}.xml"
+    api_policy_url="https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/apim-api-policy-${fncapp_suffixes[$value]}.xml"
 
     # Provision APIs to APIM
     az deployment group create \
@@ -77,7 +77,7 @@ do
     appsettings_updated=$(az functionapp config appsettings set -g $resource_group -n $fncapp_name --settings OpenApi__DocVersion=$openapi_docversion)
 
     # Update NHN Toast endpoints on function apps
-    appsettings=$(curl https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/appsettings-${fncapp_suffixes[$value]}.json)
+    appsettings=$(curl https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/appsettings-${fncapp_suffixes[$value]}.json)
     appsettings_length=$(echo $appsettings | jq '. | length')
     for (( i=0; i<$appsettings_length; i++ ))
     do

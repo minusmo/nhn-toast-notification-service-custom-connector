@@ -272,7 +272,7 @@
                     "value": "xml-link"
                   },
                   "apiMgmtPolicyValue": {
-                    "value": "https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml"
+                    "value": "https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/apim-global-policy.xml"
                   }
                 },
                 "template": {
@@ -349,10 +349,7 @@
                     "appInsightsType": {
                       "type": "string",
                       "defaultValue": "web",
-                      "allowedValues": [
-                        "web",
-                        "other"
-                      ]
+                      "allowedValues": ["web", "other"]
                     },
                     "appInsightsIngestionMode": {
                       "type": "string",
@@ -605,15 +602,9 @@
                                         "https://asia.flow.microsoft.com",
                                         "https://korea.flow.microsoft.com"
                                       ],
-                                      "allowedMethods": [
-                                        "GET"
-                                      ],
-                                      "allowedHeaders": [
-                                        "*"
-                                      ],
-                                      "exposedHeaders": [
-                                        "*"
-                                      ],
+                                      "allowedMethods": ["GET"],
+                                      "allowedHeaders": ["*"],
+                                      "exposedHeaders": ["*"],
                                       "maxAgeInSeconds": 0
                                     }
                                   ]
@@ -920,10 +911,7 @@
                             "appInsightsType": {
                               "type": "string",
                               "defaultValue": "web",
-                              "allowedValues": [
-                                "web",
-                                "other"
-                              ]
+                              "allowedValues": ["web", "other"]
                             },
                             "appInsightsIngestionMode": {
                               "type": "string",
@@ -1451,10 +1439,7 @@
                     "appInsightsType": {
                       "type": "string",
                       "defaultValue": "web",
-                      "allowedValues": [
-                        "web",
-                        "other"
-                      ]
+                      "allowedValues": ["web", "other"]
                     },
                     "appInsightsIngestionMode": {
                       "type": "string",
@@ -1472,19 +1457,12 @@
                     "functionEnvironment": {
                       "type": "string",
                       "defaultValue": "Production",
-                      "allowedValues": [
-                        "Development",
-                        "Staging",
-                        "Production"
-                      ]
+                      "allowedValues": ["Development", "Staging", "Production"]
                     },
                     "functionExtensionVersion": {
                       "type": "string",
                       "defaultValue": "v4",
-                      "allowedValues": [
-                        "v3",
-                        "v4"
-                      ]
+                      "allowedValues": ["v3", "v4"]
                     },
                     "functionWorkerRuntime": {
                       "type": "string",
@@ -1720,15 +1698,9 @@
                                         "https://asia.flow.microsoft.com",
                                         "https://korea.flow.microsoft.com"
                                       ],
-                                      "allowedMethods": [
-                                        "GET"
-                                      ],
-                                      "allowedHeaders": [
-                                        "*"
-                                      ],
-                                      "exposedHeaders": [
-                                        "*"
-                                      ],
+                                      "allowedMethods": ["GET"],
+                                      "allowedHeaders": ["*"],
+                                      "exposedHeaders": ["*"],
                                       "maxAgeInSeconds": 0
                                     }
                                   ]
@@ -2041,10 +2013,7 @@
                             "appInsightsType": {
                               "type": "string",
                               "defaultValue": "web",
-                              "allowedValues": [
-                                "web",
-                                "other"
-                              ]
+                              "allowedValues": ["web", "other"]
                             },
                             "appInsightsIngestionMode": {
                               "type": "string",
@@ -2461,10 +2430,7 @@
                             "functionExtensionVersion": {
                               "type": "string",
                               "defaultValue": "v4",
-                              "allowedValues": [
-                                "v3",
-                                "v4"
-                              ]
+                              "allowedValues": ["v3", "v4"]
                             },
                             "functionWorkerRuntime": {
                               "type": "string",
@@ -2876,7 +2842,7 @@
                       "containerGroupName": "[format(variables('metadata').longName, 'contgrp')]",
                       "functionAppSuffixes": "[parameters('functionAppSuffixes')]",
                       "azureCliVersion": "[parameters('azureCliVersion')]",
-                      "scriptUri": "https://raw.githubusercontent.com/devrel-kr/nhn-toast-notification-service-custom-connector/main/infra/setup-apim.sh"
+                      "scriptUri": "https://raw.githubusercontent.com/minusmo/nhn-toast-notification-service-custom-connector/main/infra/setup-apim.sh"
                     }
                   },
                   "resources": [
