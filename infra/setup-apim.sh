@@ -14,7 +14,7 @@ done
 suffix_index=`expr $suffix_index - 2`
 
 urls=$(curl -H "Accept: application/vnd.github.v3+json" \
-    https://api.github.com/repos/minusmo/nhn-toast-notification-service-custom-connector/releases/latest | \
+    https://api.github.com/repos/devrel-kr/nhn-toast-notification-service-custom-connector/releases/latest | \
     jq '[.assets[] | .browser_download_url]')
 
 subscription_id=$(az account show --query id -o tsv)
